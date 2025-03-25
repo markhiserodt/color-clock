@@ -1,11 +1,11 @@
 <div [style.background-color]="color" [style.width]="'100vw'" [style.height]="'100vh'" [style.display]="'flex'" [style.flex-direction]="'column'">
   <div>
     <label>Hour</label>
-    <input type="number" [(ngModel)]="hour" (ngModelChange)="colorInTime()" [disabled]="cycle">
+    <input type="number" [(ngModel)]="hour" (ngModelChange)="getColor()" [disabled]="cycle">
   </div>
   <div>
     <label>Minutes</label>
-    <input type="number" [(ngModel)]="minutes" (ngModelChange)="colorInTime()" [disabled]="cycle">
+    <input type="number" [(ngModel)]="minutes" (ngModelChange)="getColor()" [disabled]="cycle">
   </div>
   <div>
     <button (click)="cycle=!cycle">Toggle Cycle</button>
