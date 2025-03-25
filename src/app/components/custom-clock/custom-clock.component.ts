@@ -14,9 +14,9 @@ export class CustomClockComponent {
   protected minutes = 0;
   protected cycle = false;
 
-  private reds   = [ 255,  -1,   0,   0,  -1, 255];
-  private greens = [  -1, 255, 255,  -1,   0,   0];
-  private blues  = [   0,   0,  -1, 255, 255,  -1];
+  private reds   = [ 255,  255,   -1,   0,  0, -1];
+  private greens = [  0, -1, 255,  255,   -1,   0];
+  private blues  = [   -1,   0,  0, -1, 255,  255];
 
   ngOnInit(): void {
     this.colorInTime();
@@ -43,7 +43,7 @@ export class CustomClockComponent {
   }
 
   private adjustValue(hour: number, minutes: number, section: number) {
-    return section % 2 === 0 ?
+    return section % 2 === 1 ?
       (hour - section * 4) * 64 + Math.floor(minutes * (64 / 60)) :
       255 - ((hour - section * 4) * 64 + Math.ceil(minutes * (64 / 60)))
   }
